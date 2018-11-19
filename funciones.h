@@ -36,16 +36,62 @@ int vecinosVivos(int **matriz, int x, int y, int n, int m, int forma)
     {
         for (j = y - 1; j < y + 2; j++)
         {
+            switch (forma)
+            {
+            case 1:
+                if (i >= 0 && i < n)
+                {
+                    if (j >= 0 && j < m)
+                    {
+                        if (!(i == x && j == y))
+                        {
+                            contador += matriz[i][j];
+                        }
+                    }
+                }
+                break;
 
+            case 2:
             if (i >= 0 && i < n)
             {
-                if (j >= 0 && j < m)
+                if (j >= -1 && j <= m)
                 {
                     if (!(i == x && j == y))
                     {
+                        if ( j == -1) {
+                            contador += matriz[i][m-1];
+                        }
+                        else 
+                        if ( j == m) {
+                            contador += matriz[i][0];
+                        }
+                        else
                         contador += matriz[i][j];
                     }
                 }
+            }
+            break;
+
+            case 3:
+            if (j >= 0 && j < n)
+            {
+                if (i >= -1 && i <= m)
+                {
+                    if (!(i == x && j == y))
+                    {
+                        if ( i == -1) {
+                            contador += matriz[m-1][j];
+                        }
+                        else 
+                        if ( i == m) {
+                            contador += matriz[0][j];
+                        }
+                        else
+                        contador += matriz[i][j];
+                    }
+                }
+            }
+            break;
             }
         }
     }
