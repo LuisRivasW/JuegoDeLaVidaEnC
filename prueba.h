@@ -29,17 +29,19 @@ int PruebaVecinos()
         }
     }
 
-    matriz[2][0] = 1;
     matriz[0][1] = 1;
+    matriz[1][1] = 1;
     matriz[0][2] = 1;
     matriz[2][1] = 1;
 
 
-    imprimirMatriz(matriz, 3, 3);
+    // imprimirMatriz(matriz, 3, 3);
 
-    printf("%i\n", vecinosVivos(matriz, 2, 2, 3, 3, 1));
-    printf("%i\n", vecinosVivos(matriz, 2, 2, 3, 3, 2));
-    printf("%i\n", vecinosVivos(matriz, 2, 2, 3, 3, 3));
+    // printf("%i\n", vecinosVivos(matriz, 2, 2, 3, 3, 1));
+    // printf("%i\n", vecinosVivos(matriz, 2, 2, 3, 3, 2));
+    // printf("%i\n", vecinosVivos(matriz, 2, 2, 3, 3, 3));
+
+    logicaPrincipal(matriz, 5, 3, 3);
 
     return 0;
 }
